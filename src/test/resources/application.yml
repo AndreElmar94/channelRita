@@ -1,0 +1,18 @@
+server:
+  port: 8888
+
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:liquibase/master.xml
+
+
+  datasource:
+    url: "jdbc:mysql://andreelmar.xio.by:3306/channelRita?serverTimezone=UTC"
+    username: andreelmar
+    password: 19071994@mv
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    properties.hibernate.format_sql: true

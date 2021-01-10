@@ -1,0 +1,27 @@
+server:
+  port: ${SERVER_PORT:8888}
+
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:liquibase/master.xml
+    url: "jdbc:mysql://${DATABASE_HOST:andreelmar.xio.by}:${DATABASE_PORT:3306}/channelRita?serverTimezone=UTC"
+#    user: "andreelmar"
+    user: ${DATABASE_USERNAME:andreelmar}
+#    password: "19071994@mv"
+    password: ${DATABASE_PASSWORD:19071994@mv}
+
+  datasource:
+#    url: "jdbc:mysql://andreelmar.xio.by:3306/channelRita?serverTimezone=UTC"
+    url: "jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/channelRita?serverTimezone=UTC"
+    #    username: "andreelmar"
+    #    password: "19071994@mv"
+    username: ${DATABASE_USERNAME:andreelmar}
+    password: ${DATABASE_PASSWORD:19071994@mv}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+        hibernate:
+          ddl-auto: none
+    show-sql: true
+    properties.hibernate.format_sql: true
+
